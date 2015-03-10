@@ -1,3 +1,5 @@
+[![Stories in Backlog](https://badge.waffle.io/treyyyy/dinner_dash.svg?label=ready&title=Backlog)](http://waffle.io/treyyyy/dinner_dash)
+
 == README
 
 This README would normally document whatever steps are necessary to get the
