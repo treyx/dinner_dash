@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.feature "Unauthenticated user" do
-  scenario "adds item to cart" do
+  xscenario "adds item to cart" do
     item = Item.create(title: "Sushi")
     visit "/menu"
     click_button("Add To Cart")
