@@ -7,12 +7,14 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email: params[:session][:email])
     if user && user.authenticate(params[:session][:password])
-      flash[:notice] = "You are currently logged in as #{user.full_name}."
-      session[:user_id] = user.id
-      redirect_to user_path(user)
+      if user.user?
+        redirect_to user_path(user) # flash[:notice] = "You are currently logged in as #{user.full_name}."
+      elsif user.admin?
+        redirect_to '/admin' # flash[:notice] "Logged in."
+      end
     else
       flash[:errors] = "Invalid Login"
-      render :new
+      redirect_to '/login'
     end
   end
 
