@@ -39,8 +39,8 @@ RSpec.describe "User logs in" do
       fill_in('session[email]', with: user.email)
       fill_in('session[password]', with: user.password)
       click_link_or_button 'Login'
-      within("#welcome") do
-        assert page.has_content?("Welcome, #{user.name}")
+      within("#banner") do
+        assert page.has_content?("Welcome, #{user.full_name}")
       end
     end
   end
