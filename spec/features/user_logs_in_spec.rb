@@ -1,31 +1,32 @@
 require "rails_helper"
 
 RSpec.describe "User logs in" do
-  context 'with invalid log in details' do
+  
+  context 'with invalid log in credentials' do
 
-    xscenario 'can not log in without email or password' do
+    scenario 'can not log in without email or password' do
       visit '/login'
       click_link_or_button 'Login'
       within("#errors") do
-        assert page.has_content?("Invalid Login")
+        expect page.has_content?("Invalid Login")
       end
     end
 
-    xscenario 'can not log in without email' do
+    scenario 'can not log in without email' do
       visit '/login'
       fill_in('session[password]', with: 'pass')
       click_link_or_button 'Login'
       within("#errors") do
-        assert page.has_content?("Invalid Login")
+        expect page.has_content?("Invalid Login")
       end
     end
 
-    xscenario 'can not log in without password' do
+    scenario 'can not log in without password' do
       visit '/login'
       fill_in('session[email]', with: 'example@example.com')
       click_link_or_button 'Login'
       within("#errors") do
-        assert page.has_content?("Invalid Login")
+        expect page.has_content?("Invalid Login")
       end
     end
   end
@@ -40,7 +41,7 @@ RSpec.describe "User logs in" do
       fill_in('session[password]', with: user.password)
       click_link_or_button 'Login'
       within("#banner") do
-        assert page.has_content?("Welcome, #{user.full_name}")
+        expect page.has_content?("Welcome, #{user.full_name}")
       end
     end
   end
