@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:session][:email])
-    binding.pry
     if user && user.authenticate(params[:session][:password])
       if user.user?
         redirect_to user_path(user) && flash[:notice] = "You are currently logged in as #{user.full_name}."
