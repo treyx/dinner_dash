@@ -14,8 +14,8 @@ RSpec.describe User, :type => :model do
     end
   end
 
-  xit "is given a role of 'user' by default" do
-    user = User.create(email_address: "example@example.com", username: "example", password_digest: "password")
+  it "is given a role of 'user' by default" do
+    user = User.create(email: "example@example.com", password: "password")
     expect(user.role).to eq("user")
   end
 end
