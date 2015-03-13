@@ -1,8 +1,9 @@
 FactoryGirl.define do
   factory :item do
-    title "Possum Stew"
-    description "Savory stew made with fresh possum"
+    title "Sushi"
+    description "A Fresh Piece"
     status 1
-    price 2.46
+    price 180
+    category_id 1
   end
 end
