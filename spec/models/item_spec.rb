@@ -29,5 +29,4 @@ RSpec.describe Item, type: :model do
       expect(item.status).to eq("active")
     end
   end
-
 end
