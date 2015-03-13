@@ -5,12 +5,13 @@ RSpec.feature "admin views the admin dashboard" do
   let(:item) { Item.create(title: "sushi") }
   
   scenario "clicks on manage items" do
-    admin && item
+    admin
+    item
     visit "/login"
     fill_in("session[email]", with: admin.email)
     fill_in("session[password]", with: admin.password)
     click_link_or_button "Login"
-    click_link_or_button "Mange Items"
+    click_link_or_button "Manage Items"
     expect(page).to have_content("sushi")
   end
 end
