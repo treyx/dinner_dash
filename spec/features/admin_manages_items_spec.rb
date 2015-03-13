@@ -2,17 +2,17 @@ require "rails_helper"
 
 RSpec.feature "admin views the admin dashboard" do
   let(:admin) { User.create(email: "example@example.com", password: "password", role: 1) }
-  let(:item) { Item.create(title: "sushi") }
+  
   
   scenario "clicks on manage items" do
     admin
-    item
+    item = create(:item)
     visit "/login"
     fill_in("session[email]", with: admin.email)
     fill_in("session[password]", with: admin.password)
     click_link_or_button "Login"
     click_link_or_button "Manage Items"
-    expect(page).to have_content("sushi")
+    expect(page).to have_content("Sushi")
   end
 
   scenario "clicks on add item" do
