@@ -6,7 +6,7 @@ RSpec.describe Item, type: :model do
       item = Item.create
       expect(item).to_not be_valid
     end
-    
+
     it "is invalid without a description" do
       item = build(:item, description: nil)
       expect(item).to_not be_valid

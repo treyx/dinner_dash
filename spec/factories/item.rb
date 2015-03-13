@@ -6,4 +6,5 @@ FactoryGirl.define do
     price 180
     category_id 1
   end
+  
 end
