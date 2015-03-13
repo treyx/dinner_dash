@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "login" => "sessions#new", :as => "login"
   post "login" => "sessions#create"
   resources :users, only: [:show]
+  resources :items
 
   namespace 'admin' do
     get '', to: 'dashboard#index', as: '/'
