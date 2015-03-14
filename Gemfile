@@ -39,11 +39,13 @@ gem "twitter-bootstrap-rails"
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+
+  gem 'coveralls', require: false
   
   gem 'factory_girl_rails'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  # gem 'byebug'
   gem 'pry'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
