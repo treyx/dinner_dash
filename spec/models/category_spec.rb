@@ -7,4 +7,5 @@ RSpec.describe Category, type: :model do
       expect(category).to_not be_valid
     end
   end
+
 end
