@@ -1,8 +1,12 @@
 require 'factory_girl_rails'
+require 'coveralls'
+Coveralls.wear!
 
 
 
 RSpec.configure do |config|
+
+
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction

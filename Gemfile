@@ -39,6 +39,8 @@ gem "twitter-bootstrap-rails"
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+
+  gem 'coveralls', require: false
   
   gem 'factory_girl_rails'
 
