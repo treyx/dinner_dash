@@ -1,5 +1,4 @@
 class OrdersController < ApplicationController
-  
   def create
     item = Item.find(params[:item_id])
     # @current_order.cart_items = { item.id => { :quantity => 1 } }
