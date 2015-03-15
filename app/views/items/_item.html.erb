@@ -12,10 +12,13 @@
         <%= number_to_currency(item.price) %>
     </div>
 
-    <%= button_to "Add To Cart", orders_path(item_id: item) %> </p>
+    <%= button_to "Add To Cart", cart_path(item_id: item) %> </p>
+
+    
 
     <div class="admin">
 
     </div>
 
 </div>
+
