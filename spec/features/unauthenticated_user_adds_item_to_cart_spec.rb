@@ -5,12 +5,11 @@ RSpec.feature "Unauthenticated user" do
     create(:item)
     visit "/menu"
     click_button("Add To Cart")
-    within(".container-fluid") do
-      click_on "View Cart"
+    click_on "View Cart"
+    puts current_path
+    within("#item_title") do
+      expect(page).to have_content "Sushi"
     end
-    expect(page).to have_content "Sushi"
-
-    expect(page).to have_content "1"
   end
 
   #need to have test to automatically set quantity
