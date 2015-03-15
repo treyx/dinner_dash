@@ -15,6 +15,7 @@ RSpec.feature "Unauthenticated user" do
   #need to have test to automatically set quantity
   #unless we decide to allow user to initially specifiy quantity
 
-  #if user adds item that already exists -> test that the quanity is increased and
+  #if user adds item that already exists -> 
+  #test that the quanity is increased and
   #there is not a redundant entry in db
 end

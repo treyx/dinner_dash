@@ -1,5 +1,4 @@
 class CartController < ApplicationController
-
   def create
     item_id = params[:item_id]
     @current_cart.add_item(item_id)
