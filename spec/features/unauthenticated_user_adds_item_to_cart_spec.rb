@@ -17,7 +17,6 @@ RSpec.feature "Unauthenticated user" do
       visit "/menu"
       click_button("Add To Cart")
       click_on "View Cart"
-      puts current_path
       within("#item_quantity") do
         expect(page).to have_content 1
       end
