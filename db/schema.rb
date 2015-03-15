@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150313214520) do
+ActiveRecord::Schema.define(version: 20150314202545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "categories", force: :cascade do |t|
     t.string "title"
@@ -30,14 +31,11 @@ ActiveRecord::Schema.define(version: 20150313214520) do
     t.integer  "category_id"
   end
 
-  create_table "order_items", force: :cascade do |t|
-    t.integer  "order_id"
-    t.integer  "item_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "orders", force: :cascade do |t|
+    t.text     "status"
+    t.integer  "user_id"
+    t.hstore   "cart_items"
+    t.string   "price",      array: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end

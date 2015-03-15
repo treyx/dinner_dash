@@ -1,0 +1,13 @@
+<h1> Welcome to Your Cart </h1>
+
+  <tr>
+    <th>Item</th>
+    <th>Quantity</th>
+  </tr>
+<% @current_order.cart_items.each do |item| %>
+  <tr>
+    <td><%=Item.find_by(id: item[0]).title %></td>
+    <td><%=item[1][12]%></td>
+  </tr>
+<%end%>
+

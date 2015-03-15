@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get '/menu', to: 'items#index'
+  get "/menu", to: "items#index"
 
-  resources :order_items, only: [:create]
+  get "/cart", to: "cart#index"
+  post "/cart", to: "cart#create"
 
   resources :categories do
     resources :items

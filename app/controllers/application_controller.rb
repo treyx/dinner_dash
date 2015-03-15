@@ -1,12 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  helper_method :create_cart
+  before_action :create_cart
 
-  def cart
-    return @cart if @cart
-
-    @cart = Order.find_or_create_by(id: session[:cart_id])
-    session[:cart_id] = @cart.id
-    @cart
+  def create_cart
+    @current_cart = Cart.new(session[:cart])
   end
-
 end
