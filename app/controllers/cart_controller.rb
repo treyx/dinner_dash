@@ -9,4 +9,10 @@ class CartController < ApplicationController
     @current_cart.delete_item(params[:format])
     redirect_to cart_path
   end
+
+  def update
+    binding.pry
+    @current_cart.increase_item_quantity(params[:item_id])
+    redirect_to cart_path
+  end
 end
