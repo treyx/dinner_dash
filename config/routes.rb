@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: "/menu"
+  
   get "/menu", to: "items#index"
 
   get "/cart", to: "cart#index"
@@ -8,6 +10,8 @@ Rails.application.routes.draw do
   resources :categories do
     resources :items
   end
+
+
 
   get "login" => "sessions#new", :as => "login"
   post "login" => "sessions#create"
