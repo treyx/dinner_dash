@@ -12,7 +12,11 @@ class Cart
 
   def cart_items_and_quantity
     items = Hash.new
-    cart_items.each { |id, quantity| items[Item.find(id)] = quantity }
+    cart_items.select { |item_id, quantity| items[Item.find(item_id)] = quantity }
     items
+  end
+
+  def delete_item(item_id)
+    @cart_items.delete(item_id)
   end
 end
