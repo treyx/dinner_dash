@@ -66,14 +66,13 @@ RSpec.describe "User logs in" do
       fill_in("session[password]", with: user.password)
       click_link_or_button "Login"
       expect(page).to have_content("You are logged in")
-
     end
   end
 
   context "as a valid admin" do
     let(:admin) { User.create(full_name: "dg",
                               email: "example@example.com",
-                              password: "password", 
+                              password: "password",
                               role: 1) }
 
     scenario "can log in" do
