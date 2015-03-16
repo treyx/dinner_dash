@@ -25,8 +25,6 @@ RSpec.feature "Unauthenticated user browses items" do
       expect(page).to_not have_content("Sushi")
     end
   end
-
-
 end
 
 # Unauthenticated users are NOT allowed to:
