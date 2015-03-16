@@ -293,7 +293,6 @@
         null,
         null,
         null,
-        null,
         null
       ],
       "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/spec/features/user_logs_in_spec.rb": [
@@ -691,6 +690,6 @@
         null
       ]
     },
-    "timestamp": 1426536983
+    "timestamp": 1426544544
   }
 }

@@ -28,8 +28,7 @@ RSpec.feature "Unauthenticated user browses items" do
 
 
 end
-#
-#
+
 # Unauthenticated users are NOT allowed to:
 #
 #     View another user’s private data (such as current order, etc.)
