@@ -73,7 +73,8 @@ RSpec.describe "User logs in" do
   context "as a valid admin" do
     let(:admin) { User.create(full_name: "dg",
                               email: "example@example.com",
-                              password: "password", role: 1) }
+                              password: "password", 
+                              role: 1) }
 
     scenario "can log in" do
       visit "/login"
