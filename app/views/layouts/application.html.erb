@@ -25,9 +25,20 @@
     <hl />
   </div>
 
+<p class="flash">
+  <%= flash.notice %>
+</p>
 
+<div id="categories_sidebar">
+  <ul>
+    <% Category.all.each do |category| %>
+      <li> <%= link_to category.title, category_path(category) %> </li>
+    <% end %>
+  </ul>
+</div>
 
 <li><a href="/cart">View Cart</a></li>
+
 <%= yield %>
 
 </body>

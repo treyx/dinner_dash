@@ -9,21 +9,21 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:session][:password])
       if @user.user?
         session[:user_id] = @user.id
-        # flash[:notice] = "You are currently logged in as #{user.full_name}."
+        flash[:notice] = "Sensei says: 'Welcome to the dojo'"
         redirect_to root_path
       elsif @user.admin?
         flash[:notice] = "Admin logged in."
         redirect_to '/admin'
       end
     else
-      flash[:notice] = "Sensei says 'Invalid Login: try again'"
+      flash[:notice] = "Sensei says: 'Invalid Login: try again'"
       render :new
     end
   end
 
   def destroy
     session[:user_id] = nil
-    flash[:notice] = "Sensei says 'sayonara'"
+    flash[:notice] = "Sensei says: 'sayonara'"
     redirect_to root_path
   end
 
