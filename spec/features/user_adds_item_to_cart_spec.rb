@@ -21,6 +21,24 @@ RSpec.feature "Unauthenticated user" do
         expect(page).to have_content 1
       end
     end
+  end
+
+  context "adds existing item to the cart" do
+    scenario "and the item quantity is increased" do
+      create(:item)
+      visit "/menu"
+      click_button("Add To Cart")
+      click_on "View Cart"
+      within("#item_quantity") do
+        expect(page).to have_content 1
+      end
+      visit "/menu"
+      click_button("Add To Cart")
+      click_on "View Cart"
+      within("#item_quantity") do
+        expect(page).to have_content 2
+      end
+    end
 
     context "removes item from cart" do
       scenario "and the item is removed" do
@@ -65,11 +83,19 @@ RSpec.feature "Unauthenticated user" do
           expect(page).to have_content 1
         end
       end
+
+      scenario "the item will be deleted if the quantity is decreased to 0" do
+        create(:item)
+        visit "/menu"
+        click_button("Add To Cart")
+        click_on "View Cart"
+        within("#item_quantity") do
+          expect(page).to have_content 1
+        end          
+        expect(page).to have_content "Sushi"
+        click_link_or_button("-1")
+        expect(page).to_not have_content "Sushi"
+      end
     end
-
   end
-
-  #if user adds item that already exists ->
-  #test that the quanity is increased and
-  #there is not a redundant entry in db
 end
