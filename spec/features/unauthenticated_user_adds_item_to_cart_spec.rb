@@ -34,7 +34,7 @@ RSpec.feature "Unauthenticated user" do
     end
   end
 
-  #if user adds item that already exists -> 
+  #if user adds item that already exists ->
   #test that the quanity is increased and
   #there is not a redundant entry in db
 end

@@ -3,7 +3,7 @@
 </div>
 
 <%= form_for(:session, url: login_path) do |f| %>
-  <%= f.text_field :email %>
-  <%= f.password_field :password %>
-  <%= f.submit "Login" %>
+  <p>  Please enter your email: <%= f.text_field :email, placeholder: 'Email' %> </p>
+  <p>  Please enter your password: <%= f.password_field :password, placeholder: 'Password' %> </p>
+  <p>  <%= f.submit "Login" %> </p>
 <% end %>

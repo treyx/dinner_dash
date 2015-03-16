@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  root "cart#index"
 
   get "/menu", to: "items#index"
 
@@ -13,11 +12,16 @@ Rails.application.routes.draw do
 
   get "login" => "sessions#new", :as => "login"
   post "login" => "sessions#create"
+  get '/logout', to: 'sessions#destroy'
+  delete 'logout', to: 'sessions#destroy'
+
   resources :users, only: [:show]
   resources :items
 
   namespace 'admin' do
     get '', to: 'dashboard#index', as: '/'
   end
+
+  root 'home#index'
 
 end
