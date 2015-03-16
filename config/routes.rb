@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "/menu"
+  root "cart#index"
   
   get "/menu", to: "items#index"
 
