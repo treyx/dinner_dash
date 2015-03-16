@@ -1,14 +1,80 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/config/environment.rb": [
+      "/Users/trey/Turing/Module2/dinner_dash/spec/features/admin_manages_items_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/trey/Turing/Module2/dinner_dash/spec/rails_helper.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/trey/Turing/Module2/dinner_dash/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/config/application.rb": [
+      "/Users/trey/Turing/Module2/dinner_dash/config/application.rb": [
         1,
         null,
         null,
@@ -44,12 +110,12 @@
         null,
         null
       ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/config/boot.rb": [
+      "/Users/trey/Turing/Module2/dinner_dash/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/config/environments/test.rb": [
+      "/Users/trey/Turing/Module2/dinner_dash/config/environments/test.rb": [
         1,
         null,
         null,
@@ -93,7 +159,7 @@
         null,
         null
       ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/config/initializers/assets.rb": [
+      "/Users/trey/Turing/Module2/dinner_dash/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -106,7 +172,7 @@
         null,
         null
       ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/config/initializers/backtrace_silencers.rb": [
+      "/Users/trey/Turing/Module2/dinner_dash/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -115,18 +181,18 @@
         null,
         null
       ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/config/initializers/cookies_serializer.rb": [
+      "/Users/trey/Turing/Module2/dinner_dash/config/initializers/cookies_serializer.rb": [
         null,
         null,
         1
       ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/config/initializers/filter_parameter_logging.rb": [
+      "/Users/trey/Turing/Module2/dinner_dash/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/config/initializers/inflections.rb": [
+      "/Users/trey/Turing/Module2/dinner_dash/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -144,18 +210,18 @@
         null,
         null
       ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/config/initializers/mime_types.rb": [
+      "/Users/trey/Turing/Module2/dinner_dash/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/config/initializers/session_store.rb": [
+      "/Users/trey/Turing/Module2/dinner_dash/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/config/initializers/wrap_parameters.rb": [
+      "/Users/trey/Turing/Module2/dinner_dash/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -171,7 +237,7 @@
         null,
         null
       ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/spec/factories/item.rb": [
+      "/Users/trey/Turing/Module2/dinner_dash/spec/factories/item.rb": [
         1,
         1,
         1,
@@ -181,11 +247,12 @@
         null,
         null
       ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/config/routes.rb": [
+      "/Users/trey/Turing/Module2/dinner_dash/config/routes.rb": [
         1,
         null,
         1,
         null,
+        1,
         1,
         1,
         1,
@@ -210,53 +277,11 @@
         null,
         null
       ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/app/helpers/application_helper.rb": [
+      "/Users/trey/Turing/Module2/dinner_dash/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/spec/features/unauthenticated_user_adds_item_to_cart_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/spec/features/unauthenticated_users_feature_spec.rb": [
+      "/Users/trey/Turing/Module2/dinner_dash/spec/features/unauthenticated_users_feature_spec.rb": [
         1,
         null,
         1,
@@ -282,8 +307,6 @@
         1,
         1,
         1,
-        null,
-        null,
         null,
         null,
         null,
@@ -295,7 +318,110 @@
         null,
         null
       ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/spec/features/user_logs_in_spec.rb": [
+      "/Users/trey/Turing/Module2/dinner_dash/spec/features/user_adds_item_to_cart_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/trey/Turing/Module2/dinner_dash/spec/features/user_logs_in_spec.rb": [
         1,
         null,
         1,
@@ -373,6 +499,7 @@
         null,
         null,
         null,
+        null,
         1,
         1,
         1,
@@ -384,7 +511,7 @@
         null,
         null
       ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/spec/features/user_profile_feature_spec.rb": [
+      "/Users/trey/Turing/Module2/dinner_dash/spec/features/user_profile_feature_spec.rb": [
         null,
         null,
         null,
@@ -423,7 +550,7 @@
         null,
         null
       ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/spec/models/cart_spec.rb": [
+      "/Users/trey/Turing/Module2/dinner_dash/spec/models/cart_spec.rb": [
         1,
         null,
         1,
@@ -440,138 +567,150 @@
         null,
         null
       ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/app/models/cart.rb": [
+      "/Users/trey/Turing/Module2/dinner_dash/app/models/cart.rb": [
         1,
         1,
         null,
         1,
-        38,
+        66,
         null,
         null,
         1,
-        6,
-        6,
+        11,
+        11,
         null,
+        null,
+        1,
+        24,
+        46,
+        24,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        2,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/trey/Turing/Module2/dinner_dash/spec/models/category_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/trey/Turing/Module2/dinner_dash/app/models/category.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/trey/Turing/Module2/dinner_dash/spec/models/item_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/trey/Turing/Module2/dinner_dash/app/models/item.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/trey/Turing/Module2/dinner_dash/spec/models/order_spec.rb": [
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/trey/Turing/Module2/dinner_dash/app/models/order.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/trey/Turing/Module2/dinner_dash/spec/models/user_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/trey/Turing/Module2/dinner_dash/app/models/user.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/trey/Turing/Module2/dinner_dash/app/controllers/items_controller.rb": [
+        1,
         null,
         1,
         10,
-        19,
-        10,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/spec/models/category_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/app/models/category.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/spec/models/item_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/app/models/item.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/spec/models/order_spec.rb": [
-        1,
-        null,
-        1,
-        null
-      ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/app/models/order.rb": [
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/spec/models/user_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/app/models/user.rb": [
-        1,
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/app/controllers/items_controller.rb": [
-        1,
-        null,
-        1,
-        5,
         null,
         null,
         1,
@@ -594,7 +733,7 @@
         null,
         null
       ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/app/controllers/application_controller.rb": [
+      "/Users/trey/Turing/Module2/dinner_dash/app/controllers/application_controller.rb": [
         1,
         1,
         1,
@@ -606,29 +745,15 @@
         null,
         null,
         1,
-        37,
+        65,
         null,
         null,
         1,
-        35,
-        null,
-        null
-      ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/app/controllers/cart_controller.rb": [
-        1,
-        1,
-        4,
-        4,
-        4,
-        null,
-        null,
-        1,
-        1,
-        1,
+        54,
         null,
         null
       ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/app/controllers/categories_controller.rb": [
+      "/Users/trey/Turing/Module2/dinner_dash/app/controllers/categories_controller.rb": [
         1,
         null,
         1,
@@ -637,7 +762,31 @@
         null,
         null
       ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/app/controllers/sessions_controller.rb": [
+      "/Users/trey/Turing/Module2/dinner_dash/app/controllers/cart_controller.rb": [
+        1,
+        1,
+        9,
+        9,
+        9,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        4,
+        2,
+        2,
+        2,
+        2,
+        2,
+        null,
+        null,
+        null
+      ],
+      "/Users/trey/Turing/Module2/dinner_dash/app/controllers/sessions_controller.rb": [
         1,
         null,
         1,
@@ -669,13 +818,13 @@
         null,
         null
       ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/app/controllers/home_controller.rb": [
+      "/Users/trey/Turing/Module2/dinner_dash/app/controllers/home_controller.rb": [
         1,
         1,
         null,
         null
       ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/app/controllers/admin/dashboard_controller.rb": [
+      "/Users/trey/Turing/Module2/dinner_dash/app/controllers/admin/dashboard_controller.rb": [
         1,
         null,
         1,
@@ -684,12 +833,12 @@
         null,
         null
       ],
-      "/Users/DBomb/Turing/Module2-Sinatra_and_Rails/dinner_dash/app/controllers/admin_controller.rb": [
+      "/Users/trey/Turing/Module2/dinner_dash/app/controllers/admin_controller.rb": [
         1,
         null,
         null
       ]
     },
-    "timestamp": 1426544544
+    "timestamp": 1426546289
   }
 }
