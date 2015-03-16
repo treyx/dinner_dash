@@ -7,6 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+  <div id="user_nav">
+    <% if current_user %>
+      You are logged in as:
+      <% if current_user.display_name %>
+        <%= current_user.display_name %>.
+        <%= link_to "Log out", logout_path %>
+      <% elsif %>
+        <%=current_user.full_name %>.
+        <%= link_to "Log out", logout_path %>
+      <% end %>
+    <% else %>
+      <%= link_to "Log in", login_path %>
+    <% end %>
+    <br />
+    <hl />
+  </div>
+
+
+
 <li><a href="/cart">View Cart</a></li>
 <%= yield %>
 
