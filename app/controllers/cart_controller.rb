@@ -11,7 +11,6 @@ class CartController < ApplicationController
   end
 
   def update
-    binding.pry
     @current_cart.increase_item_quantity(params[:item_id])
     redirect_to cart_path
   end
