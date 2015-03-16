@@ -9,4 +9,14 @@ class CartController < ApplicationController
     @current_cart.delete_item(params[:format])
     redirect_to cart_path
   end
+
+  def update
+    if params[:quantity] == "increase"
+      @current_cart.increase_item_quantity(params[:item_id])
+      redirect_to cart_path
+    elsif params[:quantity] == "decrease"
+      @current_cart.decrease_item_quantity(params[:item_id])
+      redirect_to cart_path
+    end
+  end
 end

@@ -6,7 +6,7 @@ class Cart
   end
 
   def add_item(item_id)
-    @cart_items[item_id] = 0
+    @cart_items[item_id] ||= 0
     @cart_items[item_id] += 1
   end
 
@@ -18,5 +18,17 @@ class Cart
 
   def delete_item(item_id)
     @cart_items.delete(item_id)
+  end
+
+  def increase_item_quantity(item_id)
+    @cart_items[item_id] += 1
+  end
+
+  def decrease_item_quantity(item_id)
+    if @cart_items[item_id] > 1
+      @cart_items[item_id] -= 1
+    else
+      @cart_items.delete(item_id)
+    end
   end
 end
