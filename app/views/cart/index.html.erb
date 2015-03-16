@@ -3,5 +3,8 @@
   <div id="item_quantity"><%= quantity %></div>
   <div id="remove_from_cart_button"> <td><%= link_to "Remove From Cart", cart_path(item), method: :delete %></td>
   <p>Modify Quantity </p>
-  <div id="modify_quantity_button"> <td> <%= button_to '+1', {:controller => "cart", :action => "update", :item_id => item.id, :quantity => "increase" } , :method=>:put  %> </div>
+    <div id="modify_quantity_button"> 
+      <td> <%= button_to '+1', {:controller => "cart", :action => "update", :item_id => item.id, :quantity => "increase" } , :method=>:put  %> </td>
+      <td> <%= button_to '-1', {:controller => "cart", :action => "update", :item_id => item.id, :quantity => "decrease" } , :method=>:put  %> </td>
+   </div>
 <% end %>
