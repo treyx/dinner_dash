@@ -30,7 +30,30 @@ RSpec.describe "User logs in" do
       end
     end
 
-  end
+    scenario 'logging in does not clear the cart' do
+      user = User.create(full_name: 'dg',
+                  email: 'example@example.com',
+                  password: 'password')
+      create(:item)
+      visit '/menu'
+      within("#items") do
+        click_link_or_button 'Add To Cart'
+      end
+      visit '/cart'
+      expect(page).to have_content("Sushi")
+      expect(page).to_not have_content("Onigiri")
+      expect(page).to have_content("1")
+      visit '/login'
+      fill_in('session[email]', with: user.email)
+      fill_in('session[password]', with: user.password)
+      click_link_or_button 'Login'
+      expect(page).to have_content("You are logged in")
+      visit '/cart'
+      expect(page).to have_content("Sushi")
+      expect(page).to_not have_content("Onigiri")
+      expect(page).to have_content("1")
+      end
+    end
 
   context 'as a valid default user' do
     let(:user) { User.create(full_name: 'dg',
@@ -43,7 +66,6 @@ RSpec.describe "User logs in" do
       fill_in('session[password]', with: user.password)
       click_link_or_button 'Login'
       expect(page).to have_content("You are logged in")
-
 
     end
   end
