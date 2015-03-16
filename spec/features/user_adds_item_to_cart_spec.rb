@@ -91,7 +91,7 @@ RSpec.feature "Unauthenticated user" do
         click_on "View Cart"
         within("#item_quantity") do
           expect(page).to have_content 1
-        end          
+        end
         expect(page).to have_content "Sushi"
         click_link_or_button("-1")
         expect(page).to_not have_content "Sushi"
