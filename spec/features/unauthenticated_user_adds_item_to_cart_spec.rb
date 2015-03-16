@@ -47,6 +47,24 @@ RSpec.feature "Unauthenticated user" do
           expect(page).to have_content 2
         end
       end
+
+      scenario "the item's quantity can be decreased by one" do
+        create(:item)
+        visit "/menu"
+        click_button("Add To Cart")
+        click_on "View Cart"
+        within("#item_quantity") do
+          expect(page).to have_content 1
+        end
+        click_link_or_button("+1")
+        within("#item_quantity") do
+          expect(page).to have_content 2
+        end
+        click_link_or_button("-1")
+        within("#item_quantity") do
+          expect(page).to have_content 1
+        end
+      end
     end
 
   end
