@@ -5,8 +5,8 @@ class OrdersController < ApplicationController
     #   redirect_to login_path and return
     # end
     order = Order.create(status: "ordered",
-                     cart_items: params[:cart],
-                        user_id: current_user.id)
+                         cart_items: params[:cart],
+                         user_id: current_user.id)
     flash[:notice] = "Order Submitted, Thank You!"
     redirect_to root_path
   end
