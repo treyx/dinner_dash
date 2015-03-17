@@ -13,13 +13,13 @@
       You are logged in as:
       <% if current_user.display_name %>
         <%= current_user.display_name %>.
-        <%= link_to "Log out", logout_path %>
+        <%= link_to "Logout", logout_path %>
       <% elsif %>
         <%=current_user.full_name %>.
-        <%= link_to "Log out", logout_path %>
+        <%= link_to "Logout", logout_path %>
       <% end %>
     <% else %>
-      <%= link_to "Log in", login_path %>
+      <%= link_to "User Login", login_path %>
     <% end %>
     <br />
     <hl />
