@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   delete "/cart", to: "cart#delete"
   put "/cart", to: "cart#update"
 
+  resources :orders, only: [:create]
+
   resources :categories do
     resources :items
   end
