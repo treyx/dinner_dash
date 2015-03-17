@@ -1,7 +1,6 @@
 require "rails_helper"
 
 RSpec.describe "User views past orders" do
-
   context "with valid authorization" do
     let(:user) { User.create(full_name: "example",
                              email: "example@example.com",
@@ -16,8 +15,6 @@ RSpec.describe "User views past orders" do
       expect(page).to have_content("Order ID")
     end
   end
-
-
 
   def login_and_submit_order
     visit "login"
