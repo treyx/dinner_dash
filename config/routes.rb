@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
 
+  root 'home#index'
+
   get "/menu", to: "items#index"
-  get "/items/:id", to: "items#show"
+  resources :items, only: [:show, :index]
+
+  resources :categories do
+    resources :items, only: [:show, :index]
+  end
 
   get "/cart", to: "cart#index"
   post "/cart", to: "cart#create"
@@ -9,13 +15,6 @@ Rails.application.routes.draw do
   put "/cart", to: "cart#update"
 
   resources :orders, only: [:create]
-
-  namespace :categories do
-    get '/', to: 'categories#index'
-    get '/:id', to: 'categories#show'
-    get '/item/:id', to: 'items#show'
-    get '/items', to: 'items#index'
-  end
 
   get "/login", to: "sessions#new", :as => "login"
   post "/login", to: "sessions#create"
@@ -28,7 +27,5 @@ Rails.application.routes.draw do
     get '/', to: 'dashboard#index', as: '/'
     resources :items
   end
-
-  root 'home#index'
 
 end

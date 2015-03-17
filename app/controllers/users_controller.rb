@@ -3,7 +3,12 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    authorize! :read, @user
+    if current_user.admin?
+      redirect_to admin_path
+    else
+      render :show
+    end
+    # authorize! :read, @user
   end
 
   private

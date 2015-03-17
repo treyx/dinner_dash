@@ -39,12 +39,12 @@ RSpec.feature "Authenticated user", type: :feature do
     end
 
     scenario "a user cannot create items" do
-      visit '/items/new'
+      visit 'admin/items/new'
       expect(page).to have_content('Not quite yet young grasshopper')
     end
 
     scenario "a user cannot create categories" do
-      visit '/categories/new'
+      visit 'categories/new'
       expect(page).to have_content('Not quite yet young grasshopper')
     end
 
