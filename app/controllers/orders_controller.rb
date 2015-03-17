@@ -1,8 +1,13 @@
 class OrdersController < ApplicationController
   def create
-    item = Item.find(params[:item_id])
-    # @current_order.cart_items = { item.id => { :quantity => 1 } }
-    @current_order.save
-    redirect_to menu_path, alert: "You are redirected yo!"
+    # unless current_user
+    #   flash[:error] = "You must log in to checkout. Please login."
+    #   redirect_to login_path and return
+    # end
+    submitted_cart = params[:cart]
+    order = Order.create(status: "ordered",
+           cart_items: submitted_cart)
+    flash[:notice] = "Order Submitted, Thank You!"
+      redirect_to root_path
   end
 end

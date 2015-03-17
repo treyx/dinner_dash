@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.feature "Unauthenticated user" do
+RSpec.feature "A user" do
   context "adds item to cart" do
     scenario "and sees the item title" do
       create(:item)
@@ -19,6 +19,16 @@ RSpec.feature "Unauthenticated user" do
       click_on "View Cart"
       within("#item_quantity") do
         expect(page).to have_content 1
+      end
+    end
+
+    scenario "and sees the item price" do
+      create(:item)
+      visit "/menu"
+      click_button("Add To Cart")
+      click_on "View Cart"
+      within("#item_price") do
+        expect(page).to have_content "$11.00"
       end
     end
   end
@@ -95,6 +105,19 @@ RSpec.feature "Unauthenticated user" do
         expect(page).to have_content "Sushi"
         click_link_or_button("-1")
         expect(page).to_not have_content "Sushi"
+      end
+    end
+    context "can submit an order" do
+      scenario "with items in the cart" do
+        create(:item)
+        visit "/menu"
+        click_button("Add To Cart")
+        click_on "View Cart"
+        within("#item_quantity") do
+          expect(page).to have_content 1
+        end
+        click_link_or_button("Submit Order")
+        expect(page).to have_content("Order Submitted, Thank You!")
       end
     end
   end
