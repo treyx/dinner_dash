@@ -16,7 +16,7 @@ RSpec.describe "User views past orders" do
     scenario "can view an individual order" do
       login_and_submit_order
       click_link_or_button "View Past Orders"
-      click_link_or_button "View Order"
+      click_link_or_button "View Order Details"
       expect(page).to have_content("Sushi")
     end
 
