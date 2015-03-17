@@ -1,0 +1,12 @@
+<h1> <%= current_user.full_name %>'s Orders</h1>
+<h4> User ID: <%= current_user.id %> </h4>
+
+<tr>
+  <th>Order ID</th>
+  <th>Status </th>
+</tr>
+<% current_user.orders.each do |order| %>
+  <tr>
+    <td><%= order.id %></td>
+    <td><%= order.status %></td>
+<% end %>
