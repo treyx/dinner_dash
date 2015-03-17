@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
         flash[:notice] = "Sensei says: 'Welcome to the dojo'"
         redirect_to root_path
       elsif @user.admin?
+        session[:user_id] = @user.id
         flash[:notice] = "Admin logged in."
         redirect_to '/admin'
       end
