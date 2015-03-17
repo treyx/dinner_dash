@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get "/menu", to: "items#index"
+  get "/items/:id", to: "items#show"
 
   get "/cart", to: "cart#index"
   post "/cart", to: "cart#create"
@@ -9,20 +10,23 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:create]
 
-  resources :categories do
-    resources :items
+  namespace :categories do
+    get '/', to: 'categories#index'
+    get '/:id', to: 'categories#show'
+    get '/item/:id', to: 'items#show'
+    get '/items', to: 'items#index'
   end
 
-  get "login" => "sessions#new", :as => "login"
-  post "login" => "sessions#create"
-  get '/logout', to: 'sessions#destroy'
-  delete 'logout', to: 'sessions#destroy'
+  get "/login", to: "sessions#new", :as => "login"
+  post "/login", to: "sessions#create"
+  get "/logout", to: 'sessions#destroy'
+  delete "/logout", to: 'sessions#destroy'
 
   resources :users, only: [:show]
-  resources :items
 
   namespace 'admin' do
-    get '', to: 'dashboard#index', as: '/'
+    get '/', to: 'dashboard#index', as: '/'
+    resources :items
   end
 
   root 'home#index'

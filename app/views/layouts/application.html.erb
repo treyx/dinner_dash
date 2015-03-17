@@ -14,9 +14,15 @@
 </head>
 
 <body>
+
 <p class="flash">
   <%= flash.notice %>
 </p>
+
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+<% end %>
+
 
 <br />
 
@@ -72,6 +78,7 @@
 </nav>
 
 <%= yield %>
+
 
 </body>
 </html>
