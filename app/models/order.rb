@@ -1,7 +1,6 @@
 class Order < ActiveRecord::Base
   belongs_to :user
 
-
   def created_at_formatted
     created_at.strftime("%A, %d %b %Y %l:%M %p")
   end
