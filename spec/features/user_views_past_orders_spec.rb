@@ -4,8 +4,10 @@ RSpec.describe "User views past orders" do
 
   context "with valid authorization" do
     let(:user) { User.create(full_name: "example",
-                                 email: "example@example.com",
-                              password: "password") }
+                             email: "example@example.com",
+                             password: "password"
+                             )
+               }
 
     scenario "can see a past order" do
       login_and_submit_order
