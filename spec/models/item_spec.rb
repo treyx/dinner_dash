@@ -21,6 +21,11 @@ RSpec.describe Item, type: :model do
       item = build(:item, price: nil)
       expect(item).to_not be_valid
     end
+
+    xit "is invalid without a category" do
+      item = build(:item, category: nil)
+      expect(item).to_not be_valid
+    end
   end
 
   context "context attributes" do
