@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.feature "admin views the admin dashboard" do
-  let(:admin) { User.create(email: "example@example.com", password: "password", role: 1) }
+  let(:admin) { User.create(email: "example@example.com", password: "password", full_name: "example", role: 1) }
 
   def add_new_item(title, description, price)
     fill_in 'Title', with: title
@@ -10,7 +10,7 @@ RSpec.feature "admin views the admin dashboard" do
     click_button 'Create Item'
   end
 
-  xscenario "clicks on manage items" do
+  scenario "clicks on manage items" do
     admin
     create(:item)
     visit "/login"
@@ -21,7 +21,7 @@ RSpec.feature "admin views the admin dashboard" do
     expect(page).to have_content("Sushi")
   end
 
-  xscenario "clicks on add item" do
+  scenario "clicks on add item" do
     admin
     visit "/login"
     fill_in("session[email]", with: admin.email)
@@ -32,6 +32,3 @@ RSpec.feature "admin views the admin dashboard" do
     expect(page).to have_content("Sushi Roll")
   end
 end
-
-  #need to eventually test that it is given a status of 0 by default
-  #also will need to change schema and default value like with user role
