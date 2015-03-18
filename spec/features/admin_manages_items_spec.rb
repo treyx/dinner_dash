@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.feature "a valid admin" do
-  let(:admin) { User.create(email: "example@example.com", password: "password", full_name: "example", role: 1) }
+  let(:admin) { User.create(email: "example@example.com", password: "password", full_name: "example", display_name: "example admin", role: 1) }
 
   def add_new_item(title, description, price)
     fill_in 'Title', with: title
@@ -35,11 +35,13 @@ RSpec.feature "a valid admin" do
   end
   
   context "can modify an item's attributes" do
-    scenario "makes an item retired" do
+    xscenario "makes an item retired" do
       admin_log_in
       create(:item)
       click_link_or_button "Manage Items"
+      #this can be modified
       click_link_or_button "Sushi"
+      click_link_or_button "Retire"
     end
   end
 end
