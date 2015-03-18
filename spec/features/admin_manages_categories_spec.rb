@@ -17,8 +17,17 @@ RSpec.feature "a valid admin" do
       cat2 = Category.create(title: "Drinks", description: "drink_description")
       admin_log_in
       click_link_or_button "Manage Categories"
-      save_and_open_page
       expect(page).to have_content("Food Drinks")
+    end
+
+    scenario "can add a new category" do
+      admin_log_in
+      click_link_or_button "Manage Categories"
+      click_link_or_button "Add New Category"
+      fill_in("category[title]", with: "Food")
+      fill_in("category[description]", with: "A new description")
+      click_link_or_button "Create Category"
+      expect(page).to have_content("Food")
     end
   end
 end
