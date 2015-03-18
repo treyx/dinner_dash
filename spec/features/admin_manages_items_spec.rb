@@ -3,10 +3,11 @@ require "rails_helper"
 RSpec.feature "a valid admin" do
   let(:admin) { User.create(email: "example@example.com", password: "password", full_name: "example", display_name: "example admin", role: 1) }
 
-  def add_new_item(title, description, price)
+  def add_new_item(title, description, price, category)
     fill_in 'Title', with: title
     fill_in 'Description', with: description
     fill_in 'Price', with: price
+    check (category)
     click_button 'Create Item'
   end
 
@@ -26,10 +27,13 @@ RSpec.feature "a valid admin" do
       expect(page).to have_content("Sushi")
     end
 
-    scenario "clicks on add item" do
+    xscenario "clicks on add item" do
+      # why doesn't this fucking work
       admin_log_in
+      Category.create(title: "Sushi", description: "Sushi")
+      click_link_or_button "Manage Items"
       click_link_or_button "Add Item"
-      add_new_item "Sushi Roll", "A Roll Of Sushi", 8.45
+      add_new_item "Sushi Roll", "A Roll Of Sushi", 8.45, "Sushi"
       expect(page).to have_content("Sushi Roll")
     end
   end

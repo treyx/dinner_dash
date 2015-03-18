@@ -39,20 +39,18 @@ RSpec.feature "Authenticated user", type: :feature do
 
     end
 
+    scenario "a user cannot create items" do
+      visit 'admin/items/new'
+      expect(page).to have_content('Not quite yet young grasshopper')
+    end
 
-
-    #     view the administrator screens or use administrator functionality
-    #     make themselves an administrator
-    # can a user create categories or items?
-
-
+    scenario "a user cannot create categories" do
+      visit 'admin/categories/new'
+      expect(page).to have_content('Not quite yet young grasshopper')
+    end
 
   end
 end
-
-
-
-
 
 
 # Authenticated Users (Non-Administrators)
@@ -75,14 +73,6 @@ end
 
 
 # Administrators
-#
-# As an authenticated Administrator, I can:
-#
-#     Create item listings including a name, description, price, and upload a photo
-#     Modify existing items’ name, description, price, and photo
-#     Create named categories for items (eg: "Small Plates")
-#     Assign items to categories or remove them from categories. Products can belong to more than one category.
-#     Retire a item from being sold, which hides it from browsing by any non-administrator
 #
 # As an Administrator, I can also view an order "dashboard" where I can:
 #

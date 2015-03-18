@@ -1,25 +1,16 @@
 class ItemsController < ApplicationController
 
   def index
+    #not retired items
     @items = Item.all
   end
 
-  def new
-    @item = Item.new
+  def post
+    
   end
 
-  def create
-    @item = Item.new(item_params)
-    if @item.save
-      redirect_to items_path
-    else
-      render :new
-    end
+  def show
+
   end
 
-  private
-
-  def item_params
-    params.require(:item).permit(:title, :description, :price)
-  end
 end

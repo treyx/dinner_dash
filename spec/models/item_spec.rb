@@ -30,3 +30,6 @@ RSpec.describe Item, type: :model do
     end
   end
 end
+
+
+# Create item listings including a name, description, price, and upload a photo
