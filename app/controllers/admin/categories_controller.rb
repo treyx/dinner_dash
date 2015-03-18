@@ -2,7 +2,7 @@ class Admin::CategoriesController < AdminController
 
   def index
     if current_user.nil? || current_user.user?
-      redirect_to root_path, :alert => "Sensei says: 'Not quite yet young grasshopper'"
+      redirect_to root_path, alert: "Sensei says: 'Not quite yet young grasshopper'"
     else
       @categories = Category.all
     end
@@ -10,7 +10,7 @@ class Admin::CategoriesController < AdminController
 
   def edit
     if current_user.nil? || current_user.user?
-      redirect_to root_path, :alert => "Sensei says: 'Not quite yet young grasshopper'"
+      redirect_to root_path, alert: "Sensei says: 'Not quite yet young grasshopper'"
     else
       render :edit
     end
@@ -18,7 +18,7 @@ class Admin::CategoriesController < AdminController
 
   def new
     if current_user.nil? || current_user.user?
-      redirect_to root_path, :alert => "Sensei says: 'Not quite yet young grasshopper'"
+      redirect_to root_path, alert: "Sensei says: 'Not quite yet young grasshopper'"
     else
       @category = Category.new
     end
@@ -26,7 +26,7 @@ class Admin::CategoriesController < AdminController
 
   def create
     if current_user.nil? || current_user.user?
-      redirect_to root_path, :alert => "Sensei says: 'Not quite yet young grasshopper'"
+      redirect_to root_path, alert: "Sensei says: 'Not quite yet young grasshopper'"
     else
       @category = Category.new(category_params)
       if @category.save
