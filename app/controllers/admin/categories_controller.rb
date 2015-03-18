@@ -1,5 +1,4 @@
 class Admin::CategoriesController < AdminController
-
   def index
     if current_user.nil? || current_user.user?
       redirect_to root_path, alert: "Sensei says: 'Not quite yet young grasshopper'"

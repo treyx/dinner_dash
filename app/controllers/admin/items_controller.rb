@@ -31,7 +31,7 @@ class Admin::ItemsController < AdminController
     else
       @item = Item.new(item_params)
 
-      @categories = params.select{|k,v| k.include?("ItemsCategory")}.values[0].select{|k,v| v == "1"}.keys
+      @categories = params.select{ |k,v| k.include?("ItemsCategory") }.values[0].select{ |k,v| v == "1" }.keys
 
       if @item.save
         @categories.each do |category|
