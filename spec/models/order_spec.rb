@@ -18,7 +18,7 @@ RSpec.describe Order, type: :model do
     end
 
     it "is given a status of ordered by default" do
-      order = Order.create(user_id: 1, cart_items: "dsfin")
+      order = Order.create(user_id: 1, cart_items: "{'9'=>1}")
       expect(order.status).to eq("Ordered")
     end
   end
