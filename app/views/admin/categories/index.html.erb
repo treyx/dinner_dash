@@ -1,0 +1,5 @@
+<% @categories.each do |category| %>
+  <div id="category_title"><%= category.title %></div>
+  <div id="description"><%= category.description %></div>
+  <div id="category_edit"> <td><%= link_to "Edit category", edit_admin_category_path(category) %></td>
+<% end %>

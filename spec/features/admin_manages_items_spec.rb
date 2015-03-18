@@ -5,10 +5,13 @@ RSpec.feature "admin views the admin dashboard" do
                             email: "example@example.com",
                             password: "password", role: 1) }
 
-  def add_new_item(title, description, price)
+  def add_new_item(title, description, price, category)
     fill_in 'Title', with: title
     fill_in 'Description', with: description
     fill_in 'Price', with: price
+    save_and_open_page
+
+    check (category)
     click_button 'Create Item'
   end
 
@@ -26,11 +29,11 @@ RSpec.feature "admin views the admin dashboard" do
     expect(page).to have_content("Sushi")
   end
 
-  scenario "can add item" do
+  xscenario "can add item" do
     admin_login
     click_link_or_button "Manage Items"
     click_link_or_button "Add Item"
-    add_new_item "Sushi Roll", "A Roll Of Sushi", 8.45
+    add_new_item "Sushi Roll", "A Roll Of Sushi", 8.45, "Sushi"
     expect(page).to have_content("Sushi Roll")
     #Create item listings including a name, description, price, and upload a photo
 

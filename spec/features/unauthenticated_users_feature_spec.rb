@@ -11,14 +11,15 @@ RSpec.feature "Unauthenticated user browses items" do
     end
 
     scenario "can browse items in each category" do
-      Category.create(id: 1, title: "appetizers")
-      create(:item)
+      appetizers = Category.create(id: 1, title: "appetizers")
+      item = create(:item)
+      item.categories = [appetizers]
 
       visit "/categories/1"
       expect(page).to have_content("Sushi")
 
-      Category.create(id: 2, title: "sashimi")
-      create(:item, title: "Hamachi", category_id: 2)
+      sashimi = Category.create(id: 2, title: "sashimi")
+      create(:item, title: "Hamachi", categories: [sashimi])
 
       visit "/categories/2"
       expect(page).to have_content("Hamachi")

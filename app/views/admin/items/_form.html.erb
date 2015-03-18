@@ -8,6 +8,12 @@
   <%= f.label :price %>
   <%= f.text_field :price %>
 
+  <%= f.label "Categories" %>
+
+  <% @categories.each do |category| %>
+    <%= f.label category.title %>
+    <%= check_box @item.items_categories, category.title %>
+  <% end %>
   <%= f.submit %>
 
 <% end %>

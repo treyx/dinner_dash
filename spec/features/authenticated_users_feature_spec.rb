@@ -44,17 +44,12 @@ RSpec.feature "Authenticated user", type: :feature do
     end
 
     scenario "a user cannot create categories" do
-      visit 'categories/new'
+      visit 'admin/categories/new'
       expect(page).to have_content('Not quite yet young grasshopper')
     end
 
-
   end
 end
-
-
-
-
 
 
 # Authenticated Users (Non-Administrators)

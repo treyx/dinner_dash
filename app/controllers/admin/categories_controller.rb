@@ -1,10 +1,10 @@
-class Admin::ItemsController < AdminController
+class Admin::CategoriesController < AdminController
 
   def index
     if current_user.nil? || current_user.user?
       redirect_to root_path, :alert => "Sensei says: 'Not quite yet young grasshopper'"
     else
-      @items = Item.all
+      @categories = Category.all
     end
   end
 
@@ -20,8 +20,7 @@ class Admin::ItemsController < AdminController
     if current_user.nil? || current_user.user?
       redirect_to root_path, :alert => "Sensei says: 'Not quite yet young grasshopper'"
     else
-      @item = Item.new
-      @categories = Category.all
+      @category = Category.new
     end
   end
 
@@ -29,15 +28,9 @@ class Admin::ItemsController < AdminController
     if current_user.nil? || current_user.user?
       redirect_to root_path, :alert => "Sensei says: 'Not quite yet young grasshopper'"
     else
-      @item = Item.new(item_params)
-
-      @categories = params.select{|k,v| k.include?("ItemsCategory")}.values[0].select{|k,v| v == "1"}.keys
-
-      if @item.save
-        @categories.each do |category|
-          @item.items_categories.create(category_id: Category.find_by(title: category).id)
-        end
-        redirect_to admin_items_path
+      @category = Category.new(category_params)
+      if @category.save
+        redirect_to admin_categories_path
       else
         render :new
       end
@@ -46,8 +39,7 @@ class Admin::ItemsController < AdminController
 
   private
 
-  def item_params
-    params.require(:item).permit(:title, :description, :price)
+  def category_params
+    params.require(:category).permit(:title, :description)
   end
-
 end
