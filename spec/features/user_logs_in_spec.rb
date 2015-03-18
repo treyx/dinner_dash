@@ -33,7 +33,8 @@ RSpec.describe "User logs in" do
     scenario "logging in does not clear the cart" do
       user = User.create(full_name: "dg",
                              email: "example@example.com",
-                          password: "password")
+                          password: "password",
+                          display_name: "example name")
       create(:item)
       visit "/menu"
       within("#items") do
@@ -58,7 +59,8 @@ RSpec.describe "User logs in" do
   context "as a valid default user" do
     let(:user) { User.create(full_name: "dg",
                               email: "example@example.com",
-                              password: "password") }
+                              password: "password",
+                              display_name: "example name") }
 
     scenario "can log in" do
       visit "/login"
@@ -73,6 +75,7 @@ RSpec.describe "User logs in" do
     let(:admin) { User.create(full_name: "dg",
                               email: "example@example.com",
                               password: "password",
+                              display_name: "example name",
                               role: 1) }
 
     scenario "can log in" do
