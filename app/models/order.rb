@@ -1,5 +1,7 @@
 class Order < ActiveRecord::Base
+  validates :user_id, :cart_items, presence: true
   belongs_to :user
+  enum status: %w(ordered paid cancelled completed)
 
   def created_at_formatted
     created_at.strftime("%A, %d %b %Y %l:%M %p")

@@ -4,7 +4,8 @@ RSpec.feature "Authenticated user", type: :feature do
   context "authenticated user is logged in" do
     let(:user) { User.create(full_name: "Stan Smith",
                              email: "stan@abc.com",
-                             password: "password")}
+                             password: "password",
+                             display_name: "Stan Smith")}
 
     scenario "cannot log in" do
       visit '/login'
