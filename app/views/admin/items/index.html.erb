@@ -1,0 +1,12 @@
+Admin Item Index
+
+<li> <%= link_to 'Add Item', new_admin_item_path%> </li>
+
+<div id='items'>
+  <% @items.each do |item| %>
+    <div id="item_title"><%= item.title %></div>
+    <div id="description"><%= item.description %></div>
+    <div id="price"><%= number_to_currency(item.price) %></div>
+    <div id="item_edit"> <td><%= link_to "Edit Item", edit_admin_item_path(item) %></td>
+  <% end %>
+</div>

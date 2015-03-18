@@ -1,37 +1,67 @@
 require "rails_helper"
 
 RSpec.feature "admin views the admin dashboard" do
-  let(:admin) { User.create(email: "example@example.com", password: "password", role: 1) }
+  let(:admin) { User.create(full_name: "you need a name here!",
+                            email: "example@example.com",
+                            password: "password", role: 1) }
 
-  def add_new_item(title, description, price)
+  def add_new_item(title, description, price, category)
     fill_in 'Title', with: title
     fill_in 'Description', with: description
     fill_in 'Price', with: price
+    save_and_open_page
+
+    check (category)
     click_button 'Create Item'
   end
 
-  xscenario "clicks on manage items" do
-    admin
-    create(:item)
+  def admin_login
     visit "/login"
     fill_in("session[email]", with: admin.email)
     fill_in("session[password]", with: admin.password)
     click_link_or_button "Login"
+  end
+
+  scenario "clicks on manage items" do
+    create(:item)
+    admin_login
     click_link_or_button "Manage Items"
     expect(page).to have_content("Sushi")
   end
 
-  xscenario "clicks on add item" do
-    admin
-    visit "/login"
-    fill_in("session[email]", with: admin.email)
-    fill_in("session[password]", with: admin.password)
-    click_link_or_button "Login"
+  xscenario "can add item" do
+    admin_login
+    click_link_or_button "Manage Items"
     click_link_or_button "Add Item"
-    add_new_item "Sushi Roll", "A Roll Of Sushi", 8.45
+    add_new_item "Sushi Roll", "A Roll Of Sushi", 8.45, "Sushi"
     expect(page).to have_content("Sushi Roll")
-  end
-end
+    #Create item listings including a name, description, price, and upload a photo
 
-  #need to eventually test that it is given a status of 0 by default
-  #also will need to change schema and default value like with user role
+  end
+
+  xscenario "can retire an item" do
+    admin_login
+    click_link_or_button "Manage Items"
+    expect(page).to have_content("Retire Item")
+    # Retire a item from being sold, which hides it from browsing by any non-administrator
+  end
+
+  xscenario "can modify an item" do
+    admin_login
+    click_link_or_button "Manage Items"
+    expect(page).to have_content("Edit Item")
+    # Modify existing items’ name, description, price, and photo
+    # Assign items to categories or remove them from categories. Products can belong to more than one category.
+
+
+  end
+
+  xscenario "can create a category" do
+    admin_login
+    click_link_or_button "Manage Categories"
+    expect(page).to have_content("Add Category")
+    # Create named categories for items (eg: "Small Plates")
+
+  end
+
+end
