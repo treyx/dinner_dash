@@ -25,7 +25,7 @@ RSpec.feature "a valid admin" do
       click_link_or_button "Manage Items"
       expect(page).to have_content("Sushi")
     end
-  
+
     scenario "clicks on add item" do
       admin_log_in
       click_link_or_button "Add Item"
