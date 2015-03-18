@@ -16,5 +16,10 @@ RSpec.describe Order, type: :model do
       order = Order.create(user_id: 1)
       expect(order).to_not be_valid
     end
+
+    it "is given a status of ordered by default" do
+      order = Order.create(user_id: 1, cart_items: "dsfin")
+      expect(order.status).to eq("Ordered")
+    end
   end
 end
