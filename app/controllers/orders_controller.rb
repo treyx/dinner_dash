@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
     #   flash[:error] = "You must log in to checkout. Please login."
     #   redirect_to login_path and return
     # end
-    order = Order.create(status: "ordered",
+    order = Order.create(status: "Ordered",
                          cart_items: params[:cart],
                          user_id: current_user.id)
     flash[:notice] = "Order Submitted, Thank You!"
