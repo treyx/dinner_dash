@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-  validates :user_id, presence: true
+  validates :user_id, :cart_items, presence: true
   belongs_to :user
 
   def created_at_formatted
