@@ -2,7 +2,7 @@ class Admin::ItemsController < AdminController
 
   def index
     if current_user.nil? || current_user.user?
-      redirect_to root_path, :alert => "Sensei says: 'Not quite yet young grasshopper'"
+      redirect_to root_path, alert: "Sensei says: 'Not quite yet young grasshopper'"
     else
       @items = Item.all
     end
@@ -10,7 +10,7 @@ class Admin::ItemsController < AdminController
 
   def edit
     if current_user.nil? || current_user.user?
-      redirect_to root_path, :alert => "Sensei says: 'Not quite yet young grasshopper'"
+      redirect_to root_path, alert: "Sensei says: 'Not quite yet young grasshopper'"
     else
       render :edit
     end
@@ -18,7 +18,7 @@ class Admin::ItemsController < AdminController
 
   def new
     if current_user.nil? || current_user.user?
-      redirect_to root_path, :alert => "Sensei says: 'Not quite yet young grasshopper'"
+      redirect_to root_path, alert: "Sensei says: 'Not quite yet young grasshopper'"
     else
       @item = Item.new
       @categories = Category.all
@@ -27,7 +27,7 @@ class Admin::ItemsController < AdminController
 
   def create
     if current_user.nil? || current_user.user?
-      redirect_to root_path, :alert => "Sensei says: 'Not quite yet young grasshopper'"
+      redirect_to root_path, alert: "Sensei says: 'Not quite yet young grasshopper'"
     else
       @item = Item.new(item_params)
 
