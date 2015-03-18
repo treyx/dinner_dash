@@ -33,7 +33,7 @@ RSpec.feature "a valid admin" do
       expect(page).to have_content("Sushi Roll")
     end
   end
-  
+
   context "can modify an item's attributes" do
     xscenario "makes an item retired" do
       admin_log_in
