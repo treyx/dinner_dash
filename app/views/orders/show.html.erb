@@ -1,13 +1,29 @@
-<h1> Welcome to Your Cart </h1>
+<h1>Order Information</h1>
+<h4>created: <%= @order.created_at_formatted %></h4>
+<h4>last updated at: <%= @order.updated_at_formatted %></h4>
+  <table>  
+    <tr>
+      <th>Name &nbsp; &nbsp; &nbsp;</th>
+      <th>Description</th>
+      <th>Item Price</th>
+      <th>Quantity</th>
+      <th>Total Price</th>
+    </tr>
 
-  <tr>
-    <th>Item</th>
-    <th>Quantity</th>
-  </tr>
-<% @current_order.cart_items.each do |item| %>
-  <tr>
-    <td><%=Item.find_by(id: item[0]).title %></td>
-    <td><%=item[1][12]%></td>
-  </tr>
-<%end%>
-
+    <% @order.cart_item_and_quantity.each do |item, quantity| %>
+      <tr>
+        <td><%= item.title %></td>
+        <td><%= item.description %></td>
+        <td><%= item.price %></td>
+        <td><%= quantity %></td>
+        <td><%= number_to_currency( quantity.to_i * item.price ) %></td>
+      </tr>
+    <% end %>
+    <tr>
+      <td> Total Price </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td> Need To Write A Method To Calculate Total Price </td>
+    </tr>
+  </table>
