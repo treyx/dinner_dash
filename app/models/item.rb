@@ -1,6 +1,9 @@
 class Item < ActiveRecord::Base
   validates :title, :description, :price, presence: true
-  has_attached_file :picture
+  has_attached_file :picture,
+                    :styles => { :medium => "300x300>",
+                                 :thumb => "100x100>" },
+                    :default_url => "public/seed_photos/:style/missing.png"
   validates_attachment_content_type :picture,
                                     :content_type => /\Aimage\/.*\Z/
   has_many :orders
