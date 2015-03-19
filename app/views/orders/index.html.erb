@@ -1,13 +1,10 @@
 <h1> <%= current_user.full_name %>'s Orders</h1>
 <h4> User ID: <%= current_user.id %> </h4>
 
-<tr>
-  <th>Order ID</th>
-  <th>Status </th>
-</tr>
-<% current_user.orders.each do |order| %>
-  <tr>
-    <td><%= order.id %></td>
-    <td><%= order.status %></td>
-    <td><%=link_to "View Order Details", order_path(order) %>
-<% end %>
+<ul>
+  <% current_user.orders.each do |order| %>
+      <li><%= order.id %><br />
+      <%= order.status %><br />
+      <%=link_to "View Order Details", order_path(order) %> </li>
+  <% end %>
+</ul>

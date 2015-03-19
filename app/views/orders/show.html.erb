@@ -1,7 +1,7 @@
 <h1>Order Information</h1>
 <h4>created: <%= @order.created_at_formatted %></h4>
 <h4>last updated at: <%= @order.updated_at_formatted %></h4>
-  <table>  
+  <table>
     <tr>
       <th>Name &nbsp; &nbsp; &nbsp;</th>
       <th>Description</th>
@@ -12,14 +12,14 @@
 
     <% @order.cart_item_and_quantity.each do |item, quantity| %>
       <tr>
-        <td><%= item.title %></td>
-        <td><%= item.description %></td>
+        <td><%= link_to item.title, item_path(item) %></td>
+        <td><%= link_to item.description, item_path(item)%></td>
         <td><%= item.price %></td>
         <td><%= quantity %></td>
         <td><%= number_to_currency( quantity.to_i * item.price ) %></td>
       </tr>
     <% end %>
-    
+
     <tr>
       <td> Total Price </td>
       <td></td>
@@ -29,11 +29,10 @@
     </tr>
   </table>
 
+<h4><%= @order.status.upcase %></h4>
 
 <% if current_user.admin? %>
 <%= link_to_if current_user.admin?, "Mark As Paid", {controller: "orders", action: "update", status: "paid" } , :method=>:put  %>
 <%= link_to_if current_user.admin?, "Mark As Cancelled", {controller: "orders", action: "update", status: "cancelled" } , :method=>:put  %>
 <%= link_to_if current_user.admin?, "Mark As Completed", {controller: "orders", action: "update", status: "completed" } , :method=>:put  %>
 <% end %>
-
-
