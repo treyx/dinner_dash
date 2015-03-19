@@ -28,12 +28,18 @@ RSpec.describe Item, type: :model do
     end
   end
 
-  context "context attributes" do
+  context "valid attributes" do
     it "is given a default status of active" do
       item = build(:item)
       expect(item.status).to eq("active")
     end
+
+    it "has a picture" do
+  
+    end
+
   end
+
 end
 
 

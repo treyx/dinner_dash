@@ -1,6 +1,6 @@
 #rice_items
 
-Item.create(title: "Donburi", description: "Donburi refers to a bowl of plain cooked rice with some other food on top of it. Some of our most popular varieties are gyudon (stewed beef), katsudon (tonkatsu), tendon (tempura), oyakodon (chicken and egg), tekkadon (maguro), and kaisendon (raw seafood).", price: 750, status: 0 )
+Item.create(title: "Donburi", description: "Donburi refers to a bowl of plain cooked rice with some other food on top of it. Some of our most popular varieties are gyudon (stewed beef), katsudon (tonkatsu), tendon (tempura), oyakodon (chicken and egg), tekkadon (maguro), and kaisendon (raw seafood).", price: 750, status: 0, picture: File.new("#{Rails.root}/public/seed_photos/donburi.jpeg"))
 Item.create(title: "Onigiri", description: "Onigiri, or rice balls, are made of cooked rice and are usually wrapped in nori seaweed. Ours are lightly seasoned with salt and contain a filling of your choice such as umeboshi (pickled Japanese plum), okaka (dried bonito shavings and konbu), or salmon.", price: 500 , status: 0)
 Item.create(title: "Chazuke", description: "Chazuke, or ochazuke, is a simple comfort food consisting of hot water, tea, or light fish stock poured over rice. Your chazuke can be garnished with toppings such as umeboshi, grilled salmon, or pickles." , price: 400 , status: 0)
 
