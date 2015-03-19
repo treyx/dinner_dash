@@ -2,4 +2,4 @@
 
 <%= render 'form' %>
 
-<%= link_to("Retire", "/admin/items/retire/:id", :data => @item.id) %>
+<%= link_to "Retire Item", {controller: "admin/items", action: "update", status: "retire" } , :method=>:put  %>
