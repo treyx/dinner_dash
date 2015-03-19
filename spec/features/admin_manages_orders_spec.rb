@@ -63,4 +63,3 @@ RSpec.feature "a valid admin" do
     end
   end
 end
-
