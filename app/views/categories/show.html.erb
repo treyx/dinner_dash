@@ -3,5 +3,6 @@
   <li><%= link_to item.title, item_path(item) %><br />
       <%= link_to (image_tag item.picture.url(:medium)), item_path(item) %></li>
       <%= item.description %>
+      <%= button_to "Add To Cart", cart_path(item_id: item) %> </p>
   <% end %>
 </ul>
