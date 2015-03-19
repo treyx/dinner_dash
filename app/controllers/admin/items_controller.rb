@@ -12,7 +12,6 @@ class Admin::ItemsController < AdminController
     if current_user.nil? || current_user.user?
       redirect_to root_path, alert: "Sensei says: 'Not quite yet young grasshopper'"
     else
-      #this is broken
       @item = Item.find(params[:id])
       @categories = @item.categories
       render :edit
