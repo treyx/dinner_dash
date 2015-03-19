@@ -1,12 +1,15 @@
 class OrdersController < ApplicationController
   def create
-    # unless current_user
-    #   flash[:error] = "You must log in to checkout. Please login."
-    #   redirect_to login_path and return
-    # end
-    Order.create(cart_items: params[:cart], user_id: current_user.id)
-    flash[:notice] = "Order Submitted, Thank You!"
-    redirect_to root_path
+    unless current_user
+    end
+    if current_user
+      Order.create(cart_items: params[:cart], user_id: current_user.id)
+      flash[:notice] = "Order Submitted, Thank You!"
+      redirect_to root_path
+    else
+      flash[:notice] = "You must log in to checkout. Please login."
+      redirect_to login_path
+    end
   end
 
   def index
