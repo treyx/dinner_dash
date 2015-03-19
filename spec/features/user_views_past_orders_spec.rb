@@ -7,6 +7,18 @@ RSpec.describe "User views past orders" do
                              password: "password",
                              display_name: "example name")}
 
+  def login_and_submit_order
+    visit "login"
+    fill_in("session[email]", with: user.email)
+    fill_in("session[password]", with: user.password)
+    click_link_or_button "Login"
+    create :item
+    visit "/menu"
+    click_button "Add To Cart"
+    click_on "View Cart"
+    click_link_or_button "Submit Order"
+  end
+  
     scenario "can see a past order" do
       login_and_submit_order
       click_link_or_button "View Past Orders"
@@ -20,17 +32,13 @@ RSpec.describe "User views past orders" do
       click_link_or_button "View Order Details"
       expect(page).to have_content("Sushi")
     end
+
+    scenario "can not view admin buttons" do
+      login_and_submit_order
+      click_link_or_button "View Past Orders"
+      click_link_or_button "View Order Details"
+      expect(page).to_not have_content("Mark As")
+    end
   end
 
-  def login_and_submit_order
-    visit "login"
-    fill_in("session[email]", with: user.email)
-    fill_in("session[password]", with: user.password)
-    click_link_or_button "Login"
-    create :item
-    visit "/menu"
-    click_button "Add To Cart"
-    click_on "View Cart"
-    click_link_or_button "Submit Order"
-  end
 end

@@ -37,7 +37,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="/menu">Menu<span class="sr-only"></span></a></li>
-        <li><a href="/cart">Your Cart</a></li>
+        <li><a href="/cart">View Cart</a></li>
         <li><a href="/orders">View Past Orders</a></li>
           <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Food Categories<span class="caret"></span></a>
@@ -64,7 +64,7 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<div id='flash'>
+<div class='flash'>
   <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, :id => "flash_#{name}" %>
   <% end %>

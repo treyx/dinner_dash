@@ -4,9 +4,6 @@
 
 ## Continuous Integration/Deployment
 
-### TravisCI
-[![Build Status](https://travis-ci.org/treyyyy/dinner_dash.svg)](https://travis-ci.org/treyyyy/dinner_dash)
-
 ### Codeship
 [ ![Codeship Status for treyyyy/dinner_dash](https://codeship.com/projects/a0730f50-ac30-0132-4f48-46f15878b48e/status?branch=master)](https://codeship.com/projects/68479)
 
@@ -15,7 +12,6 @@
 ### Code Climate
 [![Code Climate](https://codeclimate.com/github/treyyyy/dinner_dash/badges/gpa.svg)](https://codeclimate.com/github/treyyyy/dinner_dash)
 
-[![Test Coverage](https://codeclimate.com/github/treyyyy/dinner_dash/badges/coverage.svg)](https://codeclimate.com/github/treyyyy/dinner_dash)
 
 ## Test Coverage
 

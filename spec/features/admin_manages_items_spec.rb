@@ -7,7 +7,7 @@ RSpec.feature "a valid admin" do
     fill_in 'Title', with: title
     fill_in 'Description', with: description
     fill_in 'Price', with: price
-    check (category)
+    find(:css, "[value='1']").set(true)
     click_button 'Create Item'
   end
 
@@ -19,7 +19,7 @@ RSpec.feature "a valid admin" do
     click_link_or_button "Login"
   end
 
-  context "views the admin dashboard" do
+  context "can view the admin dashboard" do
     scenario "clicks on manage items" do
       admin_log_in
       create(:item)
@@ -27,13 +27,12 @@ RSpec.feature "a valid admin" do
       expect(page).to have_content("Sushi")
     end
 
-    xscenario "clicks on add item" do
-      # why doesn't this fucking work
+    scenario "can add an item" do
       admin_log_in
-      Category.create(title: "Sushi", description: "Sushi")
+      sushi = Category.create(title: "Sushi", description: "Sushi")
       click_link_or_button "Manage Items"
       click_link_or_button "Add Item"
-      add_new_item "Sushi Roll", "A Roll Of Sushi", 8.45, "Sushi"
+      add_new_item "Sushi Roll", "A Roll Of Sushi", 8.45, sushi.inspect
       expect(page).to have_content("Sushi Roll")
     end
   end
@@ -41,11 +40,12 @@ RSpec.feature "a valid admin" do
   context "can modify an item's attributes" do
     xscenario "makes an item retired" do
       admin_log_in
-      create(:item)
+      item = create(:item)
       click_link_or_button "Manage Items"
-      #this can be modified
-      click_link_or_button "Sushi"
+      click_link_or_button "Edit Item"
       click_link_or_button "Retire"
+      save_and_open_page
+      visit "/admin/items"
     end
   end
 end

@@ -108,8 +108,8 @@ RSpec.feature "A user" do
       end
     end
 
-    context "can submit an order" do
-      xscenario "with items in the cart" do
+    context "can not submit order without being logged in" do
+      scenario "with items in the cart" do
         create(:item)
         visit "/menu"
         click_button("Add To Cart")
@@ -118,7 +118,7 @@ RSpec.feature "A user" do
           expect(page).to have_content 1
         end
         click_link_or_button("Submit Order")
-        expect(page).to have_content("Order Submitted, Thank You!")
+        expect(current_path).to eq(login_path)
       end
     end
   end
