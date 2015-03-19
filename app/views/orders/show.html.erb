@@ -19,12 +19,13 @@
         <td><%= number_to_currency( quantity.to_i * item.price ) %></td>
       </tr>
     <% end %>
+    
     <tr>
       <td> Total Price </td>
       <td></td>
       <td></td>
       <td></td>
-      <td> Need To Write A Method To Calculate Total Price </td>
+      <td> <%= number_to_currency(@order.total_price) %> </td>
     </tr>
   </table>
 
