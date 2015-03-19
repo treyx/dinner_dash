@@ -12,8 +12,13 @@ class Order < ActiveRecord::Base
   end
 
   def cart_item_and_quantity
-    items = Hash.new
-    cart_items.select { |item_id, quantity| items[Item.find(item_id)] = quantity }
-    items
+    @items = Hash.new
+    cart_items.select { |item_id, quantity| @items[Item.find(item_id)] = quantity }
+    @items
+  end
+
+  def total_price
+    prices = @items.map { |item, quantity| item.price }
+    prices.reduce(:+)
   end
 end
