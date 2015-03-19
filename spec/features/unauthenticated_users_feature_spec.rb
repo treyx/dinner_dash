@@ -25,6 +25,14 @@ RSpec.feature "Unauthenticated user browses items" do
       expect(page).to have_content("Hamachi")
       expect(page).to_not have_content("Sushi")
     end
+
+    scenario "can view an individual item" do
+      create(:item)
+      visit "/menu"
+      click_link_or_button "Sushi"
+      expect(page).to have_content("$11.00")
+      expect(page).to_not have_content("status")
+    end
   end
 end
 
