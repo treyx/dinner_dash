@@ -26,10 +26,8 @@ RSpec.feature "Unauthenticated user browses items" do
       expect(page).to_not have_content("Sushi")
     end
 
-    scenario "cannot view an authenitcated users profile" do
-      visit "/menu"
-      expect(current_path).to eq(menu_path)
-      expect(page).to have_content("Sushi")
+    xscenario "cannot view an authenitcated users profile" do
+
     end
 
 
