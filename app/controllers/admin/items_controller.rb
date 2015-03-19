@@ -47,8 +47,10 @@ class Admin::ItemsController < AdminController
     end
   end
 
-  def retire
-    binding.pry
+  def update
+    @item = Item.find(params[:id])
+    @item.retired!
+    redirect_to admin_items_path
   end
 
   private

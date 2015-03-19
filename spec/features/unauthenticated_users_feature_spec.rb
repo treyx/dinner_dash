@@ -26,17 +26,12 @@ RSpec.feature "Unauthenticated user browses items" do
       expect(page).to_not have_content("Sushi")
     end
 
-    xscenario "cannot view an authenitcated users profile" do
-
+    scenario "can view an individual item" do
+      create(:item)
+      visit "/menu"
+      click_link_or_button "Sushi"
+      expect(page).to have_content("$11.00")
+      expect(page).to_not have_content("status")
     end
-
-
-
-    #     View another user’s private data (such as current order, etc.)
-    #     Checkout (until they log in)
-    #     View the administrator screens or use administrator functionality
-    #     Make themselves an administrator
-
-
   end
 end
