@@ -1,3 +1,7 @@
+<ul>
 <% @category.items.each do |item| %>
-  <%= link_to item.title, item_path(item) %>
-<% end %>
+  <li><%= link_to item.title, item_path(item) %><br />
+      <%= link_to (image_tag item.picture.url(:medium)), item_path(item) %></li>
+      <%= item.description %>
+  <% end %>
+</ul>
