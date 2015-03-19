@@ -1,3 +1,5 @@
 <h1>Edit your item!</h1>
 
 <%= render 'form' %>
+
+<%= link_to("Retire", "/admin/items/retire/:id", :data => @item.id) %>

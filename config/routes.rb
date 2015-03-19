@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   put "/cart", to: "cart#update"
 
   resources :orders, only: [:create, :index, :show, :update]
- 
+
   get "/login", to: "sessions#new", :as => "login"
   post "/login", to: "sessions#create"
   get "/logout", to: 'sessions#destroy'
@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   namespace 'admin' do
     get '/', to: 'dashboard#index', as: '/'
     resources :items
+    # get '/items/retire/:id', to: 'items#retire'
     resources :categories
   end
 
