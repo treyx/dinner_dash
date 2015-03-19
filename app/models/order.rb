@@ -18,7 +18,7 @@ class Order < ActiveRecord::Base
   end
 
   def total_price
-    prices = @items.map { |item, quantity| item.price }
+    prices = @items.map { |item, _quantity| item.price }
     prices.inject(:+)
   end
 end
