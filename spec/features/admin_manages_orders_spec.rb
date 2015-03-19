@@ -16,7 +16,7 @@ RSpec.feature "a valid admin" do
       admin_log_in
       Order.create(user_id: 1, cart_items: { "1" => 1 })
       click_link_or_button "Manage Orders"
-      expect(page).to have_content("Order ID")
+      expect(page).to have_content("Order")
     end
 
     scenario "can view an individual order" do

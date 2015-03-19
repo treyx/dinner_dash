@@ -13,11 +13,6 @@ RSpec.describe User, :type => :model do
       expect(user).to_not be_valid
     end
 
-    it "is invalid without a display name" do
-      user = User.new(email: "example@example.com", password: "password", full_name: "example")
-      expect(user).to_not be_valid
-    end
-
     it "is invalid without a full name" do
       user = User.new(email: "example@example.com", password: "password", display_name: "example")
       expect(user).to_not be_valid
