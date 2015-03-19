@@ -31,7 +31,6 @@ Item.create(title: "Nikujaga", description: "Nikujaga is a popular dish of home 
 
 Item.create(title: 'Hiyayakko', description: "Hiyayakko is fresh chilled tofu (usually soft tofu) commonly garnished with grated ginger, katsuobushi (shaved bonito flakes), and green onions and seasoned with soy sauce. Diners should pour a little soy sauce over the tofu before eating it." , price: 5.65, status: 0, picture: File.new("#{Rails.root}/public/seed_photos/Hiyayakko.jpg"))
 Item.create(title: "Agedashidofu", description: "Agedashidofu is made of lightly breaded tofu which is fried and served hot in a dashi soy sauce broth and commonly garnished with green onions or grated daikon.", price: 9.55, status: 0, picture: File.new("#{Rails.root}/public/seed_photos/Agedashidofu.jpg"))
-Item.create(title: "Miso Soup", description: "Miso soup is made by dissolving miso paste in fish stock (dashi). Our additions include wakame seaweed, small pieces of tofu, and sliced aburaage", price: 3.00, status: 0, picture: File.new("#{Rails.root}/public/seed_photos/miso-soup.jpg") )
 
 #yoshoku items (western imports)
 
