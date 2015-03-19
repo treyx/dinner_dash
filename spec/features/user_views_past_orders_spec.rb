@@ -20,6 +20,13 @@ RSpec.describe "User views past orders" do
       click_link_or_button "View Order Details"
       expect(page).to have_content("Sushi")
     end
+
+    scenario "can not view admin buttons" do
+      login_and_submit_order
+      click_link_or_button "View Past Orders"
+      click_link_or_button "View Order Details"
+      expect(page).to_not have_content("Mark As")
+    end
   end
 
   def login_and_submit_order
