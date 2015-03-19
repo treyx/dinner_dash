@@ -39,6 +39,22 @@ RSpec.describe "User views past orders" do
       click_link_or_button "View Order Details"
       expect(page).to_not have_content("Mark As")
     end
+
+    scenario "can see total order price" do
+      visit "login"
+      fill_in("session[email]", with: user.email)
+      fill_in("session[password]", with: user.password)
+      click_link_or_button "Login"
+      create :item
+      visit "/menu"
+      click_button "Add To Cart"
+      click_on "View Cart"
+      click_link_or_button "+1"
+      click_link_or_button "Submit Order"
+      click_link_or_button "View Past Orders"
+      click_link_or_button "View Order Details"
+      expect(page).to have_content("$22.00")
+    end
   end
 
 end

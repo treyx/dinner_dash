@@ -1,8 +1,7 @@
 class ItemsController < ApplicationController
 
   def index
-    #not retired items
-    @items = Item.all
+    @items = Item.active
   end
 
   def post
