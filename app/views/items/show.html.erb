@@ -20,7 +20,7 @@
       <%= button_to "Add To Cart", cart_path(item_id: @item) %> </p>
     </div>
 
-    <% if current_user.admin? %>
+    <% if current_user && current_user.admin? %>
 
     <div class="status">
       <%= @item.status %>
