@@ -8,7 +8,6 @@ class UsersController < ApplicationController
     else
       render :show
     end
-    # authorize! :read, @user
   end
 
   private
