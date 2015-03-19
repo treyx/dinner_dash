@@ -99,7 +99,7 @@ User.create(full_name: "Rachel Warbelow", email: "demo+rachel@jumpstartlab.com" 
 User.create(full_name: "Jeff Casimir", email: "demo+jeff@jumpstartlab.com", display_name: "j3", password: "password", role: 0)
 User.create(full_name: "Jorge Tellez", email: "demo+jorge@jumpstartlab.com", display_name: "novohispano", password: "password", role: 0)
 User.create(full_name: "Josh Cheek", email: "demo+josh@jumpstartlab.com", display_name: "josh", password: "password", role: 1)
-User.create(full_name: 'D G', email: "yourmom@gmail.com", display_name: 'Synergy', password: 'dg', role: 1)
+User.create(full_name: 'D G', email: "dg", display_name: 'Synergy', password: 'dg', role: 1)
 
 
 #descriptions taken from: http://www.japan-guide.com/e/e2035.html

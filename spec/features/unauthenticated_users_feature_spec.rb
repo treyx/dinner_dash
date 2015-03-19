@@ -25,12 +25,20 @@ RSpec.feature "Unauthenticated user browses items" do
       expect(page).to have_content("Hamachi")
       expect(page).to_not have_content("Sushi")
     end
+
+    scenario "cannot view an authenitcated users profile" do
+      visit "/menu"
+      expect(current_path).to eq(menu_path)
+      expect(page).to have_content("Sushi")
+    end
+
+
+
+    #     View another user’s private data (such as current order, etc.)
+    #     Checkout (until they log in)
+    #     View the administrator screens or use administrator functionality
+    #     Make themselves an administrator
+
+
   end
 end
-
-# Unauthenticated users are NOT allowed to:
-#
-#     View another user’s private data (such as current order, etc.)
-#     Checkout (until they log in)
-#     View the administrator screens or use administrator functionality
-#     Make themselves an administrator
