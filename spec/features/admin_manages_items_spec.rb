@@ -57,6 +57,5 @@ RSpec.feature "a valid admin" do
       fill_in("item[title]", with: "SUSHI ALL CAPS")
       expect(page).to have_content("SUSHI ALL CAPS")
     end
-
   end
 end
