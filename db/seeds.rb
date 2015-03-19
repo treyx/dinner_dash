@@ -156,6 +156,5 @@ ItemsCategory.create(item_id: 35, category_id: 8)
 ItemsCategory.create(item_id: 36, category_id: 5)
 ItemsCategory.create(item_id: 36, category_id: 1)
 
-
 #descriptions taken from: http://www.japan-guide.com/e/e2035.html
 #food photos taken from google images bro

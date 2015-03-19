@@ -107,6 +107,7 @@ RSpec.feature "A user" do
         expect(page).to_not have_content "Sushi"
       end
     end
+
     context "can not submit order without being logged in" do
       scenario "with items in the cart" do
         create(:item)
