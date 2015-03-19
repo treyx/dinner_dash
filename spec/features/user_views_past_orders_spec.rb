@@ -27,7 +27,6 @@ RSpec.describe "User views past orders" do
       click_link_or_button "View Order Details"
       expect(page).to_not have_content("Mark As")
     end
-
   end
 
   def login_and_submit_order
