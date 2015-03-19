@@ -14,7 +14,7 @@ class Admin::ItemsController < AdminController
     else
       #this is broken
       @item = Item.find(params[:id])
-      @category = @item.categories
+      @categories = @item.categories
       render :edit
     end
   end
@@ -45,6 +45,10 @@ class Admin::ItemsController < AdminController
         render :new
       end
     end
+  end
+
+  def retire
+    binding.pry
   end
 
   private

@@ -22,10 +22,6 @@ RSpec.describe Item, type: :model do
       expect(item).to_not be_valid
     end
 
-    xit "is invalid without a category" do
-      item = build(:item, category: nil)
-      expect(item).to_not be_valid
-    end
   end
 
   context "valid attributes" do
@@ -34,8 +30,15 @@ RSpec.describe Item, type: :model do
       expect(item.status).to eq("active")
     end
 
+    it "has categories" do
+      item = build(:item, id: 5)
+      item.save
+      item.categories.create(id: 1, title: "apps", description: "before meal")
+      expect(item.categories.first.title).to eq("apps")
+    end
+    
     it "has a picture" do
-  
+
     end
 
   end
