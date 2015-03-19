@@ -1,0 +1,35 @@
+<div class="item">
+
+    <div class="header">
+        <%= @item.title %>
+    </div>
+
+    <div class="picture">
+      <%= image_tag @item.picture.url %>
+    </div>
+
+    <div class="description">
+        <%= @item.description %>
+    </div>
+
+    <div class="price">
+        <%= number_to_currency(@item.price) %>
+    </div>
+
+    <div class="button">
+      <%= button_to "Add To Cart", cart_path(item_id: @item) %> </p>
+    </div>
+
+    <% if current_user.admin? %>
+
+    <div class="status">
+      <%= @item.status %>
+    </div>
+
+    <div class="edit_button">
+      <%= link_to "Edit Item", {controller: "admin/items", action: "edit" } , :method=>:put  %>
+    </div>
+
+    <% end %>
+
+</div>
