@@ -47,5 +47,16 @@ RSpec.feature "a valid admin" do
       click_link_or_button "View Item"
       expect(page).to have_content("retired")
     end
+
+    xscenario "can modify an item's attributes" do
+      admin_log_in
+      create(:item)
+      click_link_or_button "Manage Items"
+      click_link_or_button "Edit Item"
+      # save_and_open_page
+      fill_in("item[title]", with: "SUSHI ALL CAPS")
+      expect(page).to have_content("SUSHI ALL CAPS")
+    end
+
   end
 end
