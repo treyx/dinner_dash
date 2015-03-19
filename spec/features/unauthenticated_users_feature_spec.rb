@@ -35,10 +35,3 @@ RSpec.feature "Unauthenticated user browses items" do
     end
   end
 end
-
-# Unauthenticated users are NOT allowed to:
-#
-#     View another user’s private data (such as current order, etc.)
-#     Checkout (until they log in)
-#     View the administrator screens or use administrator functionality
-#     Make themselves an administrator
