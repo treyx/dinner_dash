@@ -1,3 +1,5 @@
+<div input class="textbox">
+
 <%= form_for @item,
              url: {action: "create", controller: "admin/items"},
              html: {:multipart => true} do |f| %>
@@ -23,3 +25,5 @@
   <%= f.submit %>
 
 <% end %>
+
+</div>

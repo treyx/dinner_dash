@@ -5,7 +5,7 @@
     </div>
 
     <div class="picture">
-      <%= image_tag @item.picture.url %>
+      <%= image_tag @item.picture.url(:large) %>
     </div>
 
     <div class="description">
@@ -23,7 +23,7 @@
     <% if current_user && current_user.admin? %>
 
     <div class="status">
-      <%= @item.status %>
+      This item is currently: <%= @item.status %>
     </div>
 
     <div class="edit_button">

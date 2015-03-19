@@ -1,1 +1,20 @@
-Home
+<h1>Konichiwa! Welcome to Rubī shokuhin: ルビー食品</h1>
+
+
+<h3>The tastest Japanese food outside of Japan</h3>
+
+<ul>
+<li>Click <a href='/menu'>menu</a> to see all of our tasty options.</li>
+<li>Click <a href='/cart'>view cart</a> to see what you are currently ordering.</li>
+<li>Click <a href='/orders'>your orders</a> to see all of your past orders with us. Please login first.</li>
+<li>Click on <a href='/categories'>food categories</a> to view our different type of dishes.</li>
+<% if current_user && current_user.user? %>
+  <li>Click <a href='/logout'>logout</a> to logout of our site.</li>
+  <li>Click <a href='/users/profile'>your profile</a> to see your previous orders.</li>
+<% elsif current_user && current_user.admin?%>
+  <li>Click <a href='/logout'>logout</a> to logout of our site.</li>
+  <li>Click <a href='/admin'>your profile</a> to see the admin dashboard sensei.</li>
+<% else %>
+<li>Click <a href='/login'>login</a> to log into our site.</li>
+<% end %>
+</ul>
