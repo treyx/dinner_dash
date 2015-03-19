@@ -18,7 +18,6 @@ Item.create(title: "Yakisoba", description: "Yakisoba are grilled or fried Chine
 
 #nabe_items(hot-pot)
 
-Item.create(title: "Sukiyaki", description: "Our nabe dish prepared with thinly sliced meat, vegetables, mushrooms, tofu and shirataki (konyaku noodles) simmered in a sweet soy sauce broth. The pieces of food are dipped into raw beaten egg before being eaten.", price: 11.00 , status: 0, picture: File.new("#{Rails.root}/public/seed_photos/10sukiyaki.jpg"))
 Item.create(title: "Shabu Shabu", description: "Shabu shabu is a Japanese style hot pot where pieces of thinly sliced meat, seafood, vegetables, mushrooms and tofu, are cooked by dipping them into a hot soup. The bite sized pieces are then dipped into a ponzu citrus or sesame sauce before being eaten.", price: 10.50, status: 0, picture: File.new("#{Rails.root}/public/seed_photos/shabushabu.jpeg"))
 
 #meat_items
