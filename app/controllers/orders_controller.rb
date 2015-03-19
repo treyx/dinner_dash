@@ -1,7 +1,5 @@
 class OrdersController < ApplicationController
   def create
-    unless current_user
-    end
     if current_user
       Order.create(cart_items: params[:cart], user_id: current_user.id)
       flash[:notice] = "Order Submitted, Thank You!"
