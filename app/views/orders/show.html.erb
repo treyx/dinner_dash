@@ -29,10 +29,10 @@
   </table>
 
 
-
+<% if current_user.admin? %>
 <%= link_to_if current_user.admin?, "Mark As Paid", {controller: "orders", action: "update", status: "paid" } , :method=>:put  %>
 <%= link_to_if current_user.admin?, "Mark As Cancelled", {controller: "orders", action: "update", status: "cancelled" } , :method=>:put  %>
 <%= link_to_if current_user.admin?, "Mark As Completed", {controller: "orders", action: "update", status: "completed" } , :method=>:put  %>
-
+<% end %>
 
 
