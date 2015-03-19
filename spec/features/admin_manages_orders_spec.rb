@@ -14,7 +14,7 @@ RSpec.feature "a valid admin" do
   context "views the admin dashboard" do
     scenario "clicks on manage orders" do
       admin_log_in
-      Order.create(user_id: 1, cart_items: {"1"=>1})
+      Order.create(user_id: 1, cart_items: { "1" => 1 })
       click_link_or_button "Manage Orders"
       expect(page).to have_content("Order ID")
     end
@@ -23,7 +23,7 @@ RSpec.feature "a valid admin" do
       admin_log_in
       item = create(:item)
       # binding.pry
-      Order.create(user_id: admin.id, cart_items: {"#{item.id}"=>4})
+      Order.create(user_id: admin.id, cart_items: { "#{item.id}" => 4 })
       click_link_or_button "Manage Orders"
       click_link_or_button "View Order Details"
       expect(page).to have_content("Sushi")
@@ -32,7 +32,7 @@ RSpec.feature "a valid admin" do
     scenario "can change the status of an order to paid" do
       admin_log_in
       create(:item, id: 4)
-      Order.create(user_id: admin.id, cart_items: {"4"=>12})
+      Order.create(user_id: admin.id, cart_items: { "4" => 12} )
       click_link_or_button "Manage Orders"
       click_link_or_button "View Order Details"
       click_link_or_button "Mark As Paid"
@@ -43,7 +43,7 @@ RSpec.feature "a valid admin" do
     scenario "can change the status of an order to cancelled" do
       admin_log_in
       create(:item, id: 4)
-      Order.create(user_id: admin.id, cart_items: {"4"=>12})
+      Order.create(user_id: admin.id, cart_items: { "4" => 12 })
       click_link_or_button "Manage Orders"
       click_link_or_button "View Order Details"
       click_link_or_button "Mark As Cancelled"
@@ -54,7 +54,7 @@ RSpec.feature "a valid admin" do
     scenario "can change the status of an order to complete" do
       admin_log_in
       create(:item, id: 4)
-      Order.create(user_id: admin.id, cart_items: {"4"=>12})
+      Order.create(user_id: admin.id, cart_items: { "4" =>12 })
       click_link_or_button "Manage Orders"
       click_link_or_button "View Order Details"
       click_link_or_button "Mark As Complete"
