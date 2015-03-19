@@ -43,9 +43,9 @@ RSpec.feature "a valid admin" do
       admin_log_in
       create(:item)
       click_link_or_button "Manage Items"
-      #this can be modified
-      click_link_or_button "Sushi"
+      click_link_or_button "Edit Item"
       click_link_or_button "Retire"
+      visit "/admin/items"
     end
   end
 end
